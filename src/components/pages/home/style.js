@@ -10,7 +10,14 @@ export const Logo = styled.img`
 
 export const MenuLateral = styled.div`
     width: 240px;    
-    background: linear-gradient(148.88deg, #0A4595 28.15%, #000307 78.06%);    
+    background: linear-gradient(148.88deg, #0A4595 28.15%, #000307 78.06%);
+    
+    @media only screen and (max-width: 840px) {
+        .mobile{
+            diplay: none;
+        }
+
+    }
 `;
 
 export const ContainerOpcoes = styled.div`

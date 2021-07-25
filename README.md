@@ -2,7 +2,7 @@
 
 Projeto desenvolvido durante o programa hiring coders 2.
 
-## Desenvolvido
+## Desenvolvimento
 
 Layout de um dashboard para ecommerce com cadastro de clientes e de produtos.
 
@@ -13,13 +13,14 @@ Página de cadastro de novos clietnes - Formulário de cadastro que salva os dad
 Página Produtos - Planilha com informação dos Produtos cadastrados e botão para cadastrar novos Produtos.
 Página de cadastro de novos Produtos - Formulário de cadastro que salva os dados na LocalStorage.
 
+***Ateção devido ao prazo de entrega 25/07, não foi possivel concluir todas as funcionalidades nem adaptar o projeto para ser responsivo.***   
 
 ### Para inicar o projeto
 
-Clone o repositorio `https://github.com/GeorgeLindoTorres/dashboard-system-farma`
+Clone o repositorio https://github.com/GeorgeLindoTorres/dashboard-system-farma
 Na pasta dashboard-system-farma execute o comando `npm i`
 Depois de baixar as dependencias do node_modules execute o comnado `npm start`
 
 #### Confira o Demo do projeto
 
-`https://dashboard-system-farma.netlify.app/`
+https://dashboard-system-farma.netlify.app/
