@@ -29,6 +29,10 @@ export const Container = styled.div`
         border-style: outset;
       }
 
+    .footer{
+        height: 10rem;
+    }
+
       
 
 `
