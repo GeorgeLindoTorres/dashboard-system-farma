@@ -2,33 +2,33 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 90%;
+    background-color: #fff;
     margin: auto;
-    margin-top: 3rem;
+    border-radius: 20px;
 
-    input{
-        width: 90%;
-        margin: 10px;
+    .conteainerTabela{
+        padding: 3rem 0;
+        margin-bottom: 6rem;        
+    }
+
+    table{
+    width: 92%;
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    }
+
+    th{
+        text-align: left;
+        padding: 15px;
+        border-style: outset;
+    }
+    td {
         padding: 10px;
-    }
+        border-style: outset;
+      }
 
-    fieldset{
-        background: #fff;
-        border-radius: 21px;
-        margin-bottom: 1rem;
-    }
+      
 
-    label{
-        display: block;
-        margin-left: 10px;
-    }
-    
-`
-export const Button = styled.button`
-background-color: #0a4595;
-padding: 10px 40px;
-border-radius: 5px;
-color: white;
-margin-bottom: 3rem;
-border: none;
-cursor: pointer;
 `
