@@ -3,10 +3,10 @@ import * as S from './style';
 import logoSystem from '../../../assets/img/logo-system.png';
 import IconLogin from '../../../assets/img/account_circle_white_24dp.svg';
 import IconArrowRight from  '../../../assets/img/arrow_right.png';
-import Clientes from '../../clientes/Clientes';
+import CadastroClientes from '../../cadastroClientes/CadastroClientes';
 import Produtos from '../../produtos/Produtos';
 import setaVoltar from '../../../assets/img/outline_keyboard_backspace_black_24dp.png';
-
+import Clientes from '../../clientes/Clientes';
 
 
 
@@ -84,14 +84,17 @@ const Home = (props) => {
                             </div>                
                         </S.CardInfo>
                     </S.ContaineCards></div> : <div></div> }
-                    { page === 'clientes' ? <div>
-                        <div className="voltarClientes" onClick={() => {setPage('home'); document.getElementById('containerConteudo').setAttribute("style", "height:100vw")}}>
+                    { page === 'cadastrarClientes' ? <div>
+                        <div className="voltarClientes" onClick={() => {setPage('clientes'); document.getElementById('containerConteudo').setAttribute("style", "height:100vw")}}>
                             <img className="setaVoltar" src={setaVoltar} alt="Seta para esquerda" />
-                            <p>Clientes</p></div><Clientes /></div> : <div></div> }
+                            <p>Clientes</p></div><CadastroClientes /></div> : <div></div> }
                     { page === 'produtos' ? <div>
                         <div className="voltarClientes" onClick={() => {setPage('home'); document.getElementById('containerConteudo').setAttribute("style", "height:100vw")}}>
                             <img className="setaVoltar" src={setaVoltar} alt="Seta para esquerda" />
-                            <p>Produtos</p></div><Produtos /></div> : <div></div> }                     
+                            <p>Produtos</p></div><Produtos /></div> : <div></div> }                 
+
+                    { page === 'clientes' ? <div><div className="divFlex"><h1>Clientes</h1><button className="btnCadastro" onClick={() => {setPage('cadastrarClientes'); document.getElementById('containerConteudo').setAttribute("style", "height:100%")}}>Cadastrar Cliente</button></div>
+                        <Clientes /></div> : <div></div> }    
                 </S.ContainerConteudo>
             </S.ContainerLateral>      
         </S.ContainerPrincipal>         

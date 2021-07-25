@@ -44,7 +44,7 @@ const Clientes = () => {
                    <label htmlFor="descricao">Descrição</label>
                    <textarea id="descricao" placeholder="Características do produto..." rows="10" name="descricao" required value={descricao} onChange={(e) => { setDescricao(e.target.value);}}/>
                    <label htmlFor="quantidade">Quantidade</label>
-                   <input id="quantidade"  type="number" name="quantidade" required value={quantidade} onChange={(e) => { setQuantidade(e.target.value);}}/>
+                   <input id="quantidade"  type="number" name="quantidade" placeholder="0" required value={quantidade} onChange={(e) => { setQuantidade(e.target.value);}}/>
                </fieldset>               
                <S.Button type="submit">
                     Salvar

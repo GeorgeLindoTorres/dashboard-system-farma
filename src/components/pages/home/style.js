@@ -90,6 +90,27 @@ export const ContainerConteudo = styled.div`
         height: 28px;
         padding: 0.5rem;
     }
+
+    .btnCadastro{
+        width: 180px;
+        height: 40px;
+        background: #084495;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        line-height: 24px;
+        cursor: pointer;
+    }
+        
+
+    .divFlex{
+        display: flex;
+        justify-content: flex-end;
+        justify-content: space-between;
+        padding: 3rem;
+        align-items: center;  
+    }
 `
 
 export const IconAvatar = styled.img`     
