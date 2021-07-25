@@ -18,12 +18,12 @@ const Home = () => {
                <S.Logo src={logoSystem} />
                <S.ContainerOpcoes>      
                 <div className="selecao">             
-                   <S.OpcaoMenu onClick={() => setPage('home')}>
+                   <S.OpcaoMenu onClick={() => { setPage('home'); document.getElementById('containerConteudo').setAttribute("style", "height:100vw")}}>
                        <S.LinkOpcaoMenu>Home</S.LinkOpcaoMenu>                       
                    </S.OpcaoMenu>
                 </div>
                    <div className="selecao">
-                       <S.OpcaoMenu onClick={() => setPage('produtos')}>                       
+                       <S.OpcaoMenu onClick={() => { setPage('produtos'); document.getElementById('containerConteudo').setAttribute("style", "height:100vw")}}>                       
                        <S.LinkOpcaoMenu>Produtos</S.LinkOpcaoMenu>                       
                    </S.OpcaoMenu>
                    </div> 
@@ -48,14 +48,14 @@ const Home = () => {
                     {page === 'home' ? <div><S.SaudacaoHome>Olá, Administrador</S.SaudacaoHome>
                     <S.SubTextoSaudacao>Seja bem -vindo ao dashboard da System Farma.</S.SubTextoSaudacao>
                     <S.ContaineCards>
-                        <S.CardInfo onClick={() => setPage('clientes')}>
+                        <S.CardInfo onClick={() => {setPage('clientes'); document.getElementById('containerConteudo').setAttribute("style", "height:100%")}}>
                             <h3 className="tituloInfo">Total de Clientes cadastrados</h3>
                             <div className="flex">
                                 <p className="destaqueInfo">100</p>
                                 <img className="setaInfo" src={IconArrowRight} alt="Seta para direita" />
                             </div> 
                         </S.CardInfo>
-                        <S.CardInfo onClick={() => setPage('produtos')}>
+                        <S.CardInfo onClick={() => {setPage('produtos'); document.getElementById('containerConteudo').setAttribute("style", "height:100vw")}}>
                             <h3 className="tituloInfo">Total de produtos cadastrados</h3>
                             <div className="flex">
                                 <p className="destaqueInfo">300</p>

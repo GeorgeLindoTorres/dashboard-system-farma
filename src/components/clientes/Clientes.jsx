@@ -1,24 +1,60 @@
-import React, { useState } from 'react'
-import * as S from './styled'
-
+import React, { useState } from 'react';
+import * as S from './styled';
+import setaVoltar from '../../assets/img/outline_keyboard_backspace_black_24dp.png';
 
 const Clientes = () => {
 
     const [nome, setNome] = useState('');
     const [sobrenome, setSobrenome] = useState('');
     const [email, setEmail] = useState('');
+    const [cep, setCep] = useState('');
     const [rua, setRua] = useState('');
     const [bairro, setBairro] = useState('');
     const [cidade, setCidade] = useState('');
     const [estado, setEstado] = useState('');
     const [pais, setPais] = useState('');
-    const Cliente = {}
+    const cliente = { 
+        'nome': nome,
+        'sobrenome': sobrenome,
+        'email': email,
+        'cep': cep,
+        'rua': rua,
+        'bairro': bairro,
+        'cidade': cidade,
+        'estado': estado,
+        'pais': pais,        
+    };
+    const clientes = [];
+
+   
+    const handleSubmit= (e) => {               
+        e.preventDefault();
+        if(localStorage.length > 0 ){
+           const clientesLocal = localStorage.getItem('clientes');
+           clientes.push(...JSON.parse(clientesLocal));
+        }
+        clientes.push(cliente);
+        localStorage.setItem('clientes', JSON.stringify(clientes));
+        setNome('');
+        setSobrenome('');
+        setEmail('');
+        setCep('');
+        setRua('');
+        setBairro('');
+        setCidade('');
+        setEstado('');
+        setPais('');       
+        document.getElementById('nome').focus();        
+      }
 
     return (
         <S.Container>
-            <span>Todos os Clientes</span>
+            <div className="voltarClientes">
+            <img className="setaVoltar" src={setaVoltar} alt="Seta para esquerda" />
+            <p>Clientes</p>
+            </div>            
            <h1>Cadastrar Cliente</h1>
-           <form>
+           <form onSubmit={e => { handleSubmit(e)}}>
                <fieldset className="info-base"><h2>Informações</h2>
                    <label htmlFor="nome">Nome</label>
                    <input id="nome"  type="text" name="nome" required value={nome} onChange={(e) => { setNome(e.target.value);}}/>
@@ -28,6 +64,8 @@ const Clientes = () => {
                    <input id="email" type="email" name="email" required value={email} onChange={(e) => { setEmail(e.target.value);}}/>
                </fieldset>
                <fieldset className="info-base"><h2>Endereço de Entrega</h2>
+                    <label htmlFor="cep">CEP</label>
+                   <input id="cep"  type="number" name="enredeco" required value={cep} onChange={(e) => { setCep(e.target.value);}}/>
                    <label htmlFor="rua">Rua</label>
                    <input id="rua"  type="text" name="enredeco" required value={rua} onChange={(e) => { setRua(e.target.value);}}/>
                    <label htmlFor="bairro">Bairro</label>
