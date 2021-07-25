@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import * as S from './styled';
-import setaVoltar from '../../assets/img/outline_keyboard_backspace_black_24dp.png';
+// import setaVoltar from '../../assets/img/outline_keyboard_backspace_black_24dp.png';
+
+
 
 const Clientes = () => {
+    
 
     const [nome, setNome] = useState('');
     const [sobrenome, setSobrenome] = useState('');
@@ -29,8 +32,8 @@ const Clientes = () => {
    
     const handleSubmit= (e) => {               
         e.preventDefault();
-        if(localStorage.length > 0 ){
-           const clientesLocal = localStorage.getItem('clientes');
+        const clientesLocal = localStorage.getItem('clientes');
+        if(clientesLocal){           
            clientes.push(...JSON.parse(clientesLocal));
         }
         clientes.push(cliente);
@@ -48,11 +51,7 @@ const Clientes = () => {
       }
 
     return (
-        <S.Container>
-            <div className="voltarClientes">
-            <img className="setaVoltar" src={setaVoltar} alt="Seta para esquerda" />
-            <p>Clientes</p>
-            </div>            
+        <S.Container>            
            <h1>Cadastrar Cliente</h1>
            <form onSubmit={e => { handleSubmit(e)}}>
                <fieldset className="info-base"><h2>Informações</h2>
@@ -63,7 +62,7 @@ const Clientes = () => {
                    <label htmlFor="email">E-mail</label>
                    <input id="email" type="email" name="email" required value={email} onChange={(e) => { setEmail(e.target.value);}}/>
                </fieldset>
-               <fieldset className="info-base"><h2>Endereço de Entrega</h2>
+               <fieldset className="info-base"><h2>Endereço</h2>
                     <label htmlFor="cep">CEP</label>
                    <input id="cep"  type="number" name="enredeco" required value={cep} onChange={(e) => { setCep(e.target.value);}}/>
                    <label htmlFor="rua">Rua</label>

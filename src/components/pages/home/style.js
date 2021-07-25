@@ -76,6 +76,20 @@ export const ContainerConteudo = styled.div`
     width: 100%;
     height: 100vw;
     background: #EFF5F8;
+
+    .voltarClientes{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 100px;
+        margin-left: 1rem;
+    }
+
+    .setaVoltar{
+        width: 28px;
+        height: 28px;
+        padding: 0.5rem;
+    }
 `
 
 export const IconAvatar = styled.img`     
@@ -134,7 +148,7 @@ export const CardInfo = styled.div`
     }
 
     .setaInfo{
-        height: 2rem;
+        height: 1.5rem;
     }
 
     
