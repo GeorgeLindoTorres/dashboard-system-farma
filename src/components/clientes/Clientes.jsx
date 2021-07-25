@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import * as S from './styled';
 
 
@@ -18,9 +18,13 @@ const Clientes = () => {
                     <th>Nome</th>
                     <th>E-mail</th>
                 </tr>
-                {dadosClientes.map((cliente) => <tr><td>{cliente.nome}</td><td>{cliente.email}</td></tr>)}
+                { dadosClientes ? dadosClientes.map((cliente) => 
+                <tr><td>{cliente.nome}</td><td>{cliente.email}</td></tr>) :
+                <tr><td>Nenhum cliente cadastrado</td><td>-</td></tr>
+                }                 
             </table>
         </div>
+        <div className="footer"></div>
         </S.Container>
         
     )
